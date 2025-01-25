@@ -1,17 +1,104 @@
 //Add your global variables here
+let pattern = [2, 2, 4, 3, 2, 1, 2, 4]; //keeps track of secret pattern
+let progress = 0; // keeps track of current game progress
+let gamePlaying = false; // keeps track of game state
 
+const startBtn = document.getElementById("start");
+const stopBtn = document.getElementById("stop");
 
+//Sound
+let tonePlaying = false;
+let volume = 0.5;
 
+let clueHoldTime = 1000;
+const cluePauseTime = 333; //how long to pause in between clues
+const nextClueWaitTime = 1000; //how long to wait before starting playback of the clue sequence
+
+let guessCounter = 0;
 
 
 // Add your functions here
 
+function startGame(){
+  progress = 0;
+  gamePlaying = true;
 
+  //swap start and stop buttons
+  startBtn.classList.add("hidden");
+  stopBtn.classList.remove("hidden");
 
+  playClueSequence();
+}
 
+function stopGame(){
+  gamePlaying = false;
 
+  //swap start and stop buttons
+  startBtn.classList.remove("hidden");
+  stopBtn.classList.add("hidden");
 
+}
 
+function lightButton(btn){
+  document.getElementById("button"+btn).classList.add("lit")
+}
+
+function clearButton(btn){
+  document.getElementById("button"+btn).classList.remove("lit")
+}
+
+function playSingleClue(btn){
+  if(gamePlaying){
+    lightButton(btn);
+    playTone(btn,clueHoldTime);
+    setTimeout(clearButton,clueHoldTime,btn);
+  }
+}
+
+function playClueSequence() {
+  context.resume()
+  let delay = nextClueWaitTime;
+  guessCounter = 0;
+  for(let i=0;i<=progress;i++){
+    console.log("play single clue: " + pattern[i] + " in " + delay + "ms")
+    setTimeout(playSingleClue,delay,pattern[i])
+    delay += clueHoldTime 
+    delay += cluePauseTime;
+  }
+}
+
+function loseGame() {
+  stopGame();
+  alert("Game Over! :(((");
+}
+
+function winGame() {
+  stopGame();
+  alert("You Won!! :D");
+}
+
+function guess(btn) {
+  console.log("user guessed: " + btn);
+  if(!gamePlaying){
+    return;
+  }
+
+  if (btn == pattern[guessCounter]){
+    if (guessCounter == progress){
+      if (progress == pattern.length - 1){
+        winGame();
+      } else {
+        progress++;
+        playClueSequence();
+      }
+    } else {
+      guessCounter++;
+    }
+  } else {
+    loseGame();
+  }
+  
+}
 
 
 

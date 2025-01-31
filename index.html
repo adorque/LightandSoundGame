@@ -12,9 +12,22 @@
 <body>
   <h1>Light and Sound Game</h1>
   <p />The challenge is to repeat the ever-increasing random signals (up to 8 signals) that is generated</p>
-  
-  <p/>Keep track of your scores here!</p>
-    <p>Score: <span id="scoreDisplay">0</span></p>
+
+  <p />Keep track of your scores here!</p>
+  <p>Current score: <span id="scoreDisplay">0</span></p>
+
+  <p>High Scores:</p>
+  <table border="1">
+    <thead>
+      <tr>
+        <th>Rank</th>
+        <th>Score</th>
+      </tr>
+    </thead>
+    <tbody id="scoreList"></tbody>
+  </table>
+  <!-- <ul id="scoreList"></ul>
+  <script src="script.js"></script> -->
 
   <!-- <div class="wrapper">
     <table>
@@ -26,23 +39,15 @@
         </tr>
     </table>
   </div> -->
-  
+
   <button id="start" onclick="startGame()">Start</button>
   <button id="stop" class="hidden" onclick="stopGame()">Stop</button>
   <div id="gameButtonArea">
     <!-- add game buttons here -->
-    <button id="button1"
-      onmousedown="startTone(1)" onmouseup="stopTone()" onclick="guess(1)"
-      ></button>
-    <button id="button2"
-      onmousedown="startTone(2)" onmouseup="stopTone()" onclick="guess(2)"
-      ></button>
-    <button id="button3"
-      onmousedown="startTone(3)" onmouseup="stopTone()" onclick="guess(3)"
-      ></button>
-    <button id="button4"
-      onmousedown="startTone(4)" onmouseup="stopTone()" onclick="guess(4)"
-      ></button>
+    <button id="button1" onmousedown="startTone(1)" onmouseup="stopTone()" onclick="guess(1)"></button>
+    <button id="button2" onmousedown="startTone(2)" onmouseup="stopTone()" onclick="guess(2)"></button>
+    <button id="button3" onmousedown="startTone(3)" onmouseup="stopTone()" onclick="guess(3)"></button>
+    <button id="button4" onmousedown="startTone(4)" onmouseup="stopTone()" onclick="guess(4)"></button>
   </div>
 
   <!-- Links our JavaScript code to our HTML code -->

@@ -4,6 +4,7 @@ let pattern = new Array(8);
 let progress = 0; // keeps track of current game progress
 let gamePlaying = false; // keeps track of game state
 let score = 0;
+let highScores = new Array(3); //keeps track of top 3 scores from current session
 
 const startBtn = document.getElementById("start");
 const stopBtn = document.getElementById("stop");
@@ -75,11 +76,13 @@ function playClueSequence() {
 
 function loseGame() {
   stopGame();
+  newHighScore(score);
   alert("Game Over! :(((");
 }
 
 function winGame() {
   stopGame();
+  newHighScore(score);
   alert("You Won!! :D");
 }
 
@@ -97,8 +100,8 @@ function guess(btn) {
         progress++;
         playClueSequence();
 
-        //updates score after current guess is correct
-        score += score + (1000 * 0.2) * (guessCounter + 1);
+        //Score multiplier of 20%
+        score += (1000 * 0.2) * (guessCounter + 1);
         document.getElementById("scoreDisplay").textContent = score;
 
       }
@@ -117,6 +120,41 @@ function randSequence(pattern) { //randomizes the pattern
   }
 }
 
+function newHighScore(score) { //checks if new high score can be added to array
+  for (let i = highScores.length - 1; i >= 0; i++) {
+    if (!highScores.hasOwnProperty(i) || score > highScores[i]) {
+      highScores[i] = score;
+      highScores.sort(function(a, b) { return b - a });
+      console.log("High Scores: " + highScores);
+
+      //display scores
+      displayScores();
+      return true;
+    }
+  }
+}
+
+function displayScores() {
+  let scoreList = document.getElementById("scoreList");
+  if (!scoreList) {
+    console.error("Element with id 'scoreList' not found");
+    return;
+  }
+
+  scoreList.innerHTML = "";
+  console.log(highScores);
+  let i = 1;
+
+  highScores.forEach(score => {
+    let row = `<tr>
+      <td>${i}</td>
+      <td>${score !== undefined ? score : "-"}</td>
+    </tr>`;
+    scoreList.innerHTML += row;
+    i++;
+  });
+
+}
 
 
 // Sound Synthesis Functions for Steps 6-8

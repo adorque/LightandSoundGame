@@ -35,8 +35,8 @@ The following **required** functionality is complete:
 ## Video Walkthrough 
 
 Add your screen recordings for specified implemented features here:
-![losing screen recording](https://www.loom.com/share/f1496bca22c149e4a9505c376e05e682?sid=23a101df-1646-477d-9149-ad71c99b714a)
-![winning screen recording](https://www.loom.com/share/f61cf43dee444e6eb88b7a336efb9cfb?sid=5378fced-51b4-4a29-ac79-85538bddc972)
+[losing screen recording](https://www.loom.com/share/f1496bca22c149e4a9505c376e05e682?sid=23a101df-1646-477d-9149-ad71c99b714a)
+[winning screen recording](https://www.loom.com/share/f61cf43dee444e6eb88b7a336efb9cfb?sid=5378fced-51b4-4a29-ac79-85538bddc972)
 
 ## Interview Recording URL Link
 

@@ -23,7 +23,7 @@ The following **required** functionality is complete:
 - https://flexboxfroggy.com
 - https://www.w3schools.com/js/js_arrays.asp
 
-I expanded my understanding of JavaScript and CSS by not only using the listed websites but also referring to ChatGPT for explanations on JavaScript notation. Additionally, I reviewed previous full-stack projects I contributed to, identifying useful JavaScript and CSS syntax that could enhance my current project.
+I expanded my understanding of JavaScript and CSS by using the listed websites and referring to ChatGPT for explanations on JavaScript notation. I also explored topics on W3Schools and Stack Overflow to gain more context on CSS usage and troubleshoot errors encountered throughout my project. Additionally, I reviewed previous full-stack projects I contributed to, identifying useful JavaScript and CSS syntax to enhance my current work.
 
 2. What was a challenge you encountered in creating this submission (be specific)? How did you overcome it? (recommended 200 - 400 words) 
 

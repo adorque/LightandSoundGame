@@ -23,6 +23,8 @@ The following **required** functionality is complete:
 - https://flexboxfroggy.com
 - https://www.w3schools.com/js/js_arrays.asp
 
+I expanded my understanding of JavaScript and CSS by not only using the listed websites but also referring to ChatGPT for explanations on JavaScript notation. Additionally, I reviewed previous full-stack projects I contributed to, identifying useful JavaScript and CSS syntax that could enhance my current project.
+
 2. What was a challenge you encountered in creating this submission (be specific)? How did you overcome it? (recommended 200 - 400 words) 
 
 One challenge I encountered while creating this project was when my Replit project exceeded the developing time limit before I was finished with my project. I did not wish to purchase the premium version of Replit and decided to use the lightweight version of VSCode on vscode.dev. When testing the files on VSCode, it noticed that the project was not working as originally intended. When clicking the start button there was a connection error, and the CSS was not loading and I could only see the HTML I originally wrote. Upon coming across this problem, I knew what was wrong – the CSS file and JavaScript file weren’t correctly linking to the HTML file. I checked my syntax for linking HTML, JS, and CSS files (which were correct), and even learned more about the difference in environments from Replit and VSCode. Eventually, I decided to test my project on the Google Chrome browser (I was using Safari at the time) and my project worked! It turns out that Safari was not updated to the latest version – leading to VSCode not loading properly on this browser. 
